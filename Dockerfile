@@ -1,11 +1,7 @@
 # Stage 1: Build Jar
 FROM maven:3.9.6-eclipse-temurin-21 AS build
 WORKDIR /app
-
-# सर्व फाईल्स थेट कॉपी करा
 COPY . .
-
-# Maven build
 RUN mvn clean package -DskipTests
 
 # Stage 2: Run Jar
